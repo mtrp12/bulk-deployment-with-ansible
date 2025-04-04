@@ -160,7 +160,6 @@ ansible-playbook playbook.yml \
 
 ## License
 MIT
-```
 
 ## Key Features of This README:
 
