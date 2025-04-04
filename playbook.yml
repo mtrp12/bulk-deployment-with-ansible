@@ -1,4 +1,4 @@
-- name: create_endpoints
+- name: "{{ action }}"
   hosts: localhost
   connection: local
   gather_facts: false
