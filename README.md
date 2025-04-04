@@ -31,8 +31,8 @@ deployment-configs/
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-repo/api-integration.git
-cd api-integration
+git clone https://github.com/mtrp12/bulk-deployment-with-ansible.git deployment-configs
+cd deployment-configs
 ```
 
 ### 2. Configure API Settings
