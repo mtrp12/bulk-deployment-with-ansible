@@ -21,6 +21,26 @@
             },
             "body_format": "json",
             "success_codes": [200, 201]
+        },
+        "update_endpoints": {
+            "path": "/99335148-fd21-4cbc-927c-c63b3191eeb0",
+            "method": "PATCH",
+            "headers": {
+                "Content-Type": "application/json",
+                "X-TEST-HEADER": "Hello World"
+            },
+            "body_format": "json",
+            "success_codes": [200, 201]
+        },
+        "delete_endpoints": {
+            "path": "/99335148-fd21-4cbc-927c-c63b3191eeb0",
+            "method": "DELETE",
+            "headers": {
+                "Content-Type": "application/json",
+                "X-TEST-HEADER": "Hello World"
+            },
+            "body_format": "json",
+            "success_codes": [200, 201]
         }
     }
     
