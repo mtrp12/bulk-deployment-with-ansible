@@ -8,7 +8,7 @@ A modular Ansible solution for authenticating and executing API requests with JS
 
 ## Project Structure
 
-```
+```text
 api-integration/
 ├── playbook.yml               # Main playbook
 ├── variables.json             # API configuration
