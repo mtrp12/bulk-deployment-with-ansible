@@ -5,6 +5,13 @@
     use_regex: no
   register: json_files
 
+- name: check_payloads_exist
+  assert:
+    that:
+      - json_files.files | length > 0
+    fail_msg: "No JSON files found in {{ payload_dir }}"
+    success_msg: "JSON payloads found"
+
 - name: list_json_files
   command: ""
   loop: "{{ json_files.files }}"
