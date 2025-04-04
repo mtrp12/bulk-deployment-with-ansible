@@ -1,6 +1,6 @@
-# Ansible API Integration Toolkit
+# Ansible API Based Deployment Toolkit
 
-A modular Ansible solution for authenticating and executing API requests with JSON payloads.
+A modular Ansible solution for authenticating and executing API requests with JSON payloads to deploy/configure various saas solutions.
 
 ## Project Structure
 
