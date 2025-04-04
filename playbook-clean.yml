@@ -11,7 +11,7 @@
       assert:
         that: action in ['create_endpoints']
         fail_msg: "{{ action }} is not a valid action"
-        success_msg: "{{ action }} action found"
+        success_msg: "{{ action }} is a valid action"
     - include_tasks: authenticate.yml
     - include_tasks: load-payloads.yml
     - name: "{{ action }}"

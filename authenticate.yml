@@ -1,14 +1,13 @@
-- name: get_auth_token
+- name: authenticate
   uri:
-    url: "{{ api_base_url }}{{ login.endpoint }}"
-    method: POST
-    body_format: json
+    url: "{{ api_base_url }}{{ api.authenticate.path }}"
+    method: "{{ api.authenticate.method }}"
+    body_format: "{{ api.authenticate.body_format }}"
     body:
-      username: "{{ login.username }}"
-      password: "{{ login.password }}"
-    headers:
-      Content-Type: "application/json"
-    status_code: 200
+      username: "{{ api.authenticate.username }}"
+      password: "{{ api.authenticate.password }}"
+    headers: "{{ api.authenticate.headers }}"
+    status_code: "{{ api.authenticate.success_codes }}"
   register: api_result
 - name: print_auth_response
   debug:

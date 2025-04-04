@@ -8,10 +8,8 @@
     method: "{{ api[action].method }}"
     body_format: "{{ api[action].body_format }}"
     body: "{{ payload }}"
-    headers:
-      Content-Type: "application/json"
-      Authorization: "Bearer {{ auth_token }}"
-    status_code: 200, 201
+    headers: "{{ api[action].headers }}"
+    status_code: "{{ api[action].success_codes }}"
     timeout: 30
   register: api_response
   ignore_errors: yes
@@ -21,4 +19,4 @@
       "FILE: {{ item.path | basename }}, STATUS: {{ api_response.status }}, RESPONSE: {{ api_response.json | default('No JSON response') }}"
   when: 
     - api_response is not skipped
-    - api_response.status in [200, 201]
+    - api_response.status in api[action].success_codes

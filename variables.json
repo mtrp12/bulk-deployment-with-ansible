@@ -1,16 +1,26 @@
 {
     "api_base_url": "https://webhook.site",
-    "login": {
-        "endpoint": "/99335148-fd21-4cbc-927c-c63b3191eeb0",
-        "username": "user1",
-        "password": "pass1"
-    },
     "api": {
+        "authenticate": {
+            "path": "/99335148-fd21-4cbc-927c-c63b3191eeb0",
+            "method": "POST",
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "body_format": "json",
+            "success_codes": [200, 201],
+            "username": "user1",
+            "password": "pass1"
+        },
         "create_endpoints": {
             "path": "/99335148-fd21-4cbc-927c-c63b3191eeb0",
             "method": "POST",
-            "headers": "",
-            "body_format": "json"
+            "headers": {
+                "Content-Type": "application/json",
+                "X-TEST-HEADER": "Hello World"
+            },
+            "body_format": "json",
+            "success_codes": [200, 201]
         }
     }
     
