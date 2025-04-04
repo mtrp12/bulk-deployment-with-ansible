@@ -5,7 +5,7 @@ A modular Ansible solution for authenticating and executing API requests with JS
 ## Project Structure
 
 ```text
-api-integration/
+deployment-configs/
 ├── playbook.yml               # Main playbook
 ├── variables.json             # API configuration
 ├── payloads/                 
