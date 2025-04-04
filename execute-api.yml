@@ -1,4 +1,3 @@
-
 - name: "load_payload: {{ item.path }}"
   set_fact:
     payload: "{{ lookup('file', item.path) }}"
@@ -6,7 +5,7 @@
   uri:
     url: "{{ api_base_url }}{{ api[action].path }}"
     method: "{{ api[action].method }}"
-    body_format: "{{ api[action].body_format }}"
+    body_format: "{{ api[action].body_format | default('json') }}"
     body: "{{ payload }}"
     headers: "{{ api[action].headers }}"
     status_code: "{{ api[action].success_codes }}"
