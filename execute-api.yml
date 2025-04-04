@@ -1,0 +1,24 @@
+
+- name: "load_payload: {{ item.path }}"
+  set_fact:
+    payload: "{{ lookup('file', item.path) }}"
+- name: "call_{{ action }}_api"
+  uri:
+    url: "{{ api_base_url }}{{ api[action].path }}"
+    method: "{{ api[action].method }}"
+    body_format: "{{ api[action].body_format }}"
+    body: "{{ payload }}"
+    headers:
+      Content-Type: "application/json"
+      Authorization: "Bearer {{ auth_token }}"
+    status_code: 200, 201
+    timeout: 30
+  register: api_response
+  ignore_errors: yes
+- name: "{{ action }}_api_response"
+  debug:
+    msg: |
+      "FILE: {{ item.path | basename }}, STATUS: {{ api_response.status }}, RESPONSE: {{ api_response.json | default('No JSON response') }}"
+  when: 
+    - api_response is not skipped
+    - api_response.status in [200, 201]

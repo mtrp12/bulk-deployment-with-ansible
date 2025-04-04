@@ -1,0 +1,18 @@
+- name: get_auth_token
+  uri:
+    url: "{{ api_base_url }}{{ login.endpoint }}"
+    method: POST
+    body_format: json
+    body:
+      username: "{{ login.username }}"
+      password: "{{ login.password }}"
+    headers:
+      Content-Type: "application/json"
+    status_code: 200
+  register: api_result
+- name: print_auth_response
+  debug:
+    msg: response = {{ api_result.json }}
+- name: store_auth_token
+  set_fact:
+    auth_token: api_result.json.access_token

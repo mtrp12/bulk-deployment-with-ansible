@@ -1,0 +1,17 @@
+{
+    "api_base_url": "https://webhook.site",
+    "login": {
+        "endpoint": "/99335148-fd21-4cbc-927c-c63b3191eeb0",
+        "username": "user1",
+        "password": "pass1"
+    },
+    "api": {
+        "create_endpoints": {
+            "path": "/99335148-fd21-4cbc-927c-c63b3191eeb0",
+            "method": "POST",
+            "headers": "",
+            "body_format": "json"
+        }
+    }
+    
+}

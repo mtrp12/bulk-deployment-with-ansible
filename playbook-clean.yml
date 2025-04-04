@@ -1,0 +1,21 @@
+- name: create_endpoints
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  tasks:
+    # - name: Show all variables
+    #   debug:
+    #     var: vars
+    - name: validate_action
+      assert:
+        that: action in ['create_endpoints']
+        fail_msg: "{{ action }} is not a valid action"
+        success_msg: "{{ action }} action found"
+    - include_tasks: authenticate.yml
+    - include_tasks: load-payloads.yml
+    - name: "{{ action }}"
+      include_tasks: execute-api.yml
+      loop: "{{ json_files.files }}"
+      loop_control:
+        label: "Processing {{ item.path }}"

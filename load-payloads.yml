@@ -1,0 +1,14 @@
+- name: collect_payload_json_files
+  find:
+    paths: "{{ payload_dir }}"
+    patterns: "*.json"
+    use_regex: no
+  register: json_files
+
+- name: list_json_files
+  command: ""
+  loop: "{{ json_files.files }}"
+  loop_control:
+    label: "{{ item.path }}"
+  changed_when: false
+  failed_when: false

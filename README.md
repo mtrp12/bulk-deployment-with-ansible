@@ -1,0 +1,1 @@
+ansible-playbook playbook-clean.yml -e "@variables.json" -e "payload_dir=endpoints/" -e "action=create_endpoints"
