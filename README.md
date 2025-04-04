@@ -78,7 +78,7 @@ ansible-playbook playbook.yml \
 
 ## Adding New Actions
 
-1. Add the action configuration to `variables.json`:
+Add the action configuration to `variables.json`:
 ```json
 "api": {
   "new_action": {
@@ -90,13 +90,6 @@ ansible-playbook playbook.yml \
     "success_codes": [200, 201]
   }
 }
-```
-
-2. Update the validation in `playbook.yml`:
-```yaml
-- name: validate_action
-  assert:
-    that: action in ['create_endpoints', 'new_action']  # Add new action here
 ```
 
 ## Configuration Reference
