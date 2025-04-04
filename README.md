@@ -1,7 +1,3 @@
-ansible-playbook playbook-clean.yml -e "@variables.json" -e "payload_dir=endpoints/" -e "action=create_endpoints"
-Here's a comprehensive GitHub README.md for your Ansible API integration project:
-
-```markdown
 # Ansible API Integration Toolkit
 
 A modular Ansible solution for authenticating and executing API requests with JSON payloads.
